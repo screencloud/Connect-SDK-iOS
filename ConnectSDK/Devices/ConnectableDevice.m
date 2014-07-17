@@ -25,6 +25,7 @@
 #import "ToastControl.h"
 #import "TextInputControl.h"
 #import "Guid.h"
+#import "ServiceDescription+id.h"
 
 @implementation ConnectableDevice
 {
@@ -132,9 +133,12 @@
 
 - (NSString *) id
 {
-    if (!_id)
-        _id = [[Guid randomGuid] stringValueWithFormat:GuidFormatDashed];
-
+    if (!_id){
+        // SC HACK: changed from random uuid to one generated from UUID or MAC address
+        // See: ServiceDescription+id.h
+        // _id = [[Guid randomGuid] stringValueWithFormat:GuidFormatDashed];
+        _id = _consolidatedServiceDescription.id;
+    }
     return _id;
 }
 

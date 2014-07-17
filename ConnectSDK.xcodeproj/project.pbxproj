@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A361E18C19781D8100010F7E /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A361E18B19781D8100010F7E /* GoogleCast.framework */; };
+		A361E1A419783C6500010F7E /* AddressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A361E1A119783C6500010F7E /* AddressHelper.m */; };
+		A361E1A519783C6500010F7E /* NSUUID+V5.m in Sources */ = {isa = PBXBuildFile; fileRef = A361E1A319783C6500010F7E /* NSUUID+V5.m */; };
+		A361E1AB1978410900010F7E /* ServiceDescription+id.m in Sources */ = {isa = PBXBuildFile; fileRef = A361E1AA1978410900010F7E /* ServiceDescription+id.m */; };
 		BB9F70B6CD7601E5E08902A1 /* AirPlayService.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9F786205D0DD1F8718CF96 /* AirPlayService.m */; };
 		BB9F710601FE8B999634A5BF /* AirPlayWebAppSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9F76C6A6C862002C9FB89D /* AirPlayWebAppSession.m */; };
 		BB9F75C707C7D86EB1934BD5 /* ZeroConfDiscoveryProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9F752184AD57C1730A2B40 /* ZeroConfDiscoveryProvider.m */; };
@@ -236,6 +240,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A361E18B19781D8100010F7E /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleCast.framework; sourceTree = "<group>"; };
+		A361E1A019783C6500010F7E /* AddressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressHelper.h; sourceTree = "<group>"; };
+		A361E1A119783C6500010F7E /* AddressHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressHelper.m; sourceTree = "<group>"; };
+		A361E1A219783C6500010F7E /* NSUUID+V5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUUID+V5.h"; sourceTree = "<group>"; };
+		A361E1A319783C6500010F7E /* NSUUID+V5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUUID+V5.m"; sourceTree = "<group>"; };
+		A361E1A619783DA400010F7E /* route.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = route.h; sourceTree = "<group>"; };
+		A361E1A719783DCD00010F7E /* if_ether.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = if_ether.h; sourceTree = "<group>"; };
+		A361E1A819783DF300010F7E /* if_arp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = if_arp.h; sourceTree = "<group>"; };
+		A361E1A919783E0900010F7E /* if_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = if_types.h; sourceTree = "<group>"; };
+		A361E1AA1978410900010F7E /* ServiceDescription+id.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ServiceDescription+id.m"; sourceTree = "<group>"; };
+		A361E1AC1978411D00010F7E /* ServiceDescription+id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ServiceDescription+id.h"; sourceTree = "<group>"; };
 		BB9F725D0F278CD7B78F1FC6 /* AirPlayWebAppSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPlayWebAppSession.h; sourceTree = "<group>"; };
 		BB9F74D76D7D96D4136929C8 /* AirPlayServiceMirrored.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPlayServiceMirrored.h; sourceTree = "<group>"; };
 		BB9F752184AD57C1730A2B40 /* ZeroConfDiscoveryProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZeroConfDiscoveryProvider.m; sourceTree = "<group>"; };
@@ -399,6 +414,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A361E18C19781D8100010F7E /* GoogleCast.framework in Frameworks */,
 				EAD7F8601906E99C00B33AAB /* UIKit.framework in Frameworks */,
 				EAD7F85E1906E98200B33AAB /* AVFoundation.framework in Frameworks */,
 				EA61EBF218FE48EF00D75696 /* MobileCoreServices.framework in Frameworks */,
@@ -410,6 +426,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A361E19F19783C6500010F7E /* SCConnectSDKAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				A361E1A019783C6500010F7E /* AddressHelper.h */,
+				A361E1A119783C6500010F7E /* AddressHelper.m */,
+				A361E1A219783C6500010F7E /* NSUUID+V5.h */,
+				A361E1A319783C6500010F7E /* NSUUID+V5.m */,
+				A361E1A619783DA400010F7E /* route.h */,
+				A361E1A719783DCD00010F7E /* if_ether.h */,
+				A361E1A819783DF300010F7E /* if_arp.h */,
+				A361E1A919783E0900010F7E /* if_types.h */,
+				A361E1AA1978410900010F7E /* ServiceDescription+id.m */,
+				A361E1AC1978411D00010F7E /* ServiceDescription+id.h */,
+			);
+			path = SCConnectSDKAdditions;
+			sourceTree = "<group>";
+		};
 		EA61EB0718FE485B00D75696 = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +468,7 @@
 				EA61EBF118FE48EF00D75696 /* MobileCoreServices.framework */,
 				EA61EBEF18FE48E900D75696 /* SystemConfiguration.framework */,
 				EA61EBED18FE48DC00D75696 /* GoogleCast.framework */,
+				A361E18B19781D8100010F7E /* GoogleCast.framework */,
 				EA61EB1318FE485B00D75696 /* Foundation.framework */,
 				EA41388A18FE51A9002CB005 /* CoreFoundation.framework */,
 			);
@@ -651,6 +685,7 @@
 		EA61EBCE18FE48D400D75696 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A361E19F19783C6500010F7E /* SCConnectSDKAdditions */,
 				EA9AB008193F957800B72990 /* Reachability */,
 				EA9AAF90193F94F600B72990 /* ASIHTTPRequest */,
 				EA61EBCF18FE48D400D75696 /* CGDWebServer */,
@@ -807,6 +842,7 @@
 				EA61EBAC18FE48C500D75696 /* CapabilityFilter.m in Sources */,
 				EA61EBB218FE48C500D75696 /* ChannelInfo.m in Sources */,
 				EA61EBAF18FE48C500D75696 /* CastDiscoveryProvider.m in Sources */,
+				A361E1A519783C6500010F7E /* NSUUID+V5.m in Sources */,
 				EA61EBAD18FE48C500D75696 /* DiscoveryManager.m in Sources */,
 				EA61EBBA18FE48C500D75696 /* CastService.m in Sources */,
 				EA61EBB818FE48C500D75696 /* SSDPSocketListener.m in Sources */,
@@ -831,6 +867,7 @@
 				EA61EBEB18FE48D400D75696 /* LGSRWebSocket.m in Sources */,
 				EA61EBE718FE48D400D75696 /* GCDWebServerConnection.m in Sources */,
 				EA61EBAE18FE48C500D75696 /* DiscoveryProvider.m in Sources */,
+				A361E1AB1978410900010F7E /* ServiceDescription+id.m in Sources */,
 				EA61EBC918FE48C500D75696 /* CastWebAppSession.m in Sources */,
 				EA61EBCC18FE48C500D75696 /* WebOSWebAppSession.m in Sources */,
 				EA61EBCA18FE48C500D75696 /* LaunchSession.m in Sources */,
@@ -841,6 +878,7 @@
 				EA61EBC218FE48C500D75696 /* DeviceService.m in Sources */,
 				EA9AAFE5193F94F600B72990 /* ASIDataDecompressor.m in Sources */,
 				EA61EBC518FE48C500D75696 /* CastServiceChannel.m in Sources */,
+				A361E1A419783C6500010F7E /* AddressHelper.m in Sources */,
 				EA61EBBD18FE48C500D75696 /* ServiceSubscription.m in Sources */,
 				EA61EBBF18FE48C500D75696 /* ServiceConfig.m in Sources */,
 				BB9F75C707C7D86EB1934BD5 /* ZeroConfDiscoveryProvider.m in Sources */,
@@ -934,6 +972,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ConnectSDK/Frameworks",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConnectSDK/ConnectSDK-Prefix.pch";
@@ -953,6 +992,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ConnectSDK/Frameworks",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConnectSDK/ConnectSDK-Prefix.pch";
