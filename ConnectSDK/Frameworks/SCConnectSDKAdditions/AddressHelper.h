@@ -16,8 +16,13 @@
 #include <net/if_dl.h>
 
 #import "if_types.h"
-// #import "route.h"
+
+#if TARGET_IPHONE_SIMULATOR
 #include <net/route.h>
+#else
+#include "route.h"
+#endif
+
 #import "if_ether.h"
 
 #include <netinet/in.h>
