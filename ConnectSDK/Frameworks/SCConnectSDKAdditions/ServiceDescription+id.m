@@ -28,7 +28,7 @@
 
 - (BOOL) looksLikeUUID: (NSString *)input
 {
-    static NSString *expression = @"([0-9a-f]{2}[.:-]?){16}";
+    static NSString *expression = @"([0-9a-f]{2}[.:-]?){16,}";
     NSError *error = NULL;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
     NSTextCheckingResult *match = [regex firstMatchInString:input options:0 range:NSMakeRange(0, [input length])];
@@ -57,6 +57,8 @@
         // NSLog(@"mac: %@", mac);
         if(mac && [self looksLikeMacAddress:mac]){
             input = [input stringByAppendingString: mac ];
+        } else {
+            NSLog(@"unable to determine mac address for address: %@", self.address);
         }
         
     }
