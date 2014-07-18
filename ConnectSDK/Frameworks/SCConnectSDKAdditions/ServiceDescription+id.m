@@ -15,7 +15,7 @@
 
 - (BOOL) looksLikeMacAddress: (NSString *)input
 {
-    static NSString *expression = @"^([0-9a-f]{2}[.:-]){5}([0-9a-f]{2})$";
+    static NSString *expression = @"^([0-9a-f]{2}[.:-]){3,}([0-9a-f]{2})$";
     NSError *error = NULL;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
     NSTextCheckingResult *match = [regex firstMatchInString:input options:0 range:NSMakeRange(0, [input length])];
@@ -51,7 +51,14 @@
     
     NSString *input = self.UUID;
     if(![self looksLikeUUID: self.UUID] && ![self looksLikeMacAddress: self.UUID]){
-        input = [input stringByAppendingString: [AddressHelper address2mac:self.address] ];
+        // NSLog(@"uuid: %@", self.UUID);
+        // NSLog(@"address: %@", self.address);
+        NSString *mac = [AddressHelper address2mac:self.address];
+        // NSLog(@"mac: %@", mac);
+        if(mac && [self looksLikeMacAddress:mac]){
+            input = [input stringByAppendingString: mac ];
+        }
+        
     }
     
     return [[[NSUUID withNamespaceUUID:uuidNamespaceDNS name:input] UUIDString] lowercaseString];
