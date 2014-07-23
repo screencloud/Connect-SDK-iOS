@@ -379,6 +379,10 @@
 
     if (serviceDescription.modelNumber)
         _consolidatedServiceDescription.modelNumber = serviceDescription.modelNumber;
+    
+    // SC HACK: ADDED
+    if (serviceDescription.manufacturer)
+        _consolidatedServiceDescription.manufacturer = serviceDescription.manufacturer;
 }
 
 - (DeviceService *)serviceWithName:(NSString *)serviceId
