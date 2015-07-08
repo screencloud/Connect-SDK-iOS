@@ -591,18 +591,24 @@
     __block BOOL deviceAlreadyHasServiceType = NO;
     __block BOOL deviceAlreadyHasService = NO;
 
+// A MOD
+    __block DeviceService *existingService;
+    
     [device.services enumerateObjectsUsingBlock:^(DeviceService *obj, NSUInteger idx, BOOL *stop) {
         if ([obj.serviceDescription.serviceId isEqualToString:description.serviceId])
         {
             deviceAlreadyHasServiceType = YES;
-
+            
+            // A MOD
+            existingService = obj;
+            
             if ([obj.serviceDescription.UUID isEqualToString:description.UUID])
                 deviceAlreadyHasService = YES;
-
+ 
             *stop = YES;
         }
     }];
-
+ 
     if (deviceAlreadyHasServiceType)
     {
         if (deviceAlreadyHasService)
@@ -616,9 +622,43 @@
             
             return;
         }
-
+        
+        // A_ MOD
+        if( [existingService.serviceDescription.manufacturer.lowercaseString containsString:@"screencloud"]){
+            return;
+        }
+        
         [device removeServiceWithId:description.serviceId];
     }
+    
+    // [device.services enumerateObjectsUsingBlock:^(DeviceService *obj, NSUInteger idx, BOOL *stop) {
+    //     if ([obj.serviceDescription.serviceId isEqualToString:description.serviceId])
+    //     {
+    //         deviceAlreadyHasServiceType = YES;
+
+    //         if ([obj.serviceDescription.UUID isEqualToString:description.UUID])
+    //             deviceAlreadyHasService = YES;
+
+    //         *stop = YES;
+    //     }
+    // }];
+
+    // if (deviceAlreadyHasServiceType)
+    // {
+    //     if (deviceAlreadyHasService)
+    //     {
+    //         device.serviceDescription = description;
+            
+    //         DeviceService *alreadyAddedService = [device serviceWithName:description.serviceId];
+            
+    //         if (alreadyAddedService)
+    //             alreadyAddedService.serviceDescription = description;
+            
+    //         return;
+    //     }
+
+    //     [device removeServiceWithId:description.serviceId];
+    // }
 
     DeviceService *deviceService = [DeviceService deviceServiceWithClass:deviceServiceClass serviceConfig:serviceConfig];
     deviceService.serviceDescription = description;
